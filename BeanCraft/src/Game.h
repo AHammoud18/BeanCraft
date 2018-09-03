@@ -23,16 +23,8 @@ public:
 
 	static void AddTile(int id, int x, int y);
 	static SDL_Renderer *renderer;
-	static std::vector<ColliderComponent*> colliders;
-	static bool isRunning;
 	static SDL_Event event;
-	static SDL_Rect camera;
-	enum groupLabels : std::size_t
-	{
-		groupMap,
-		groupPlayers,
-		groupColliders
-	};
+	static std::vector<ColliderComponent*> colliders;
 
 private:
 	bool isRunning;

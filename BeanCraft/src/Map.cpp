@@ -1,8 +1,6 @@
 #include "Map.h"
 #include "Game.h"
 #include <fstream>
-#include "ECS\ECS.h"
-#include "ECS\Components.h"
 
 Map::Map()
 {

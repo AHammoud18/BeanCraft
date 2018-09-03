@@ -53,28 +53,18 @@ public:
 		case 7:
 			path = "assets/grasscorner2.png";
 			break;
-		case 24:
-			path = "assets/iron_sword.png";
-			break;
 		default:
 			break;
 		}
 	}
 
-	void update() override
-	{
-		tileRect.x = position.x - Game::camera.x;
-		tileRect.y = position.y - Game::camera.y;
-
-	}
-
-	/*void init() override
+	void init() override
 	{
 		entity->addComponent<TransformComponent>((float)tileRect.x, (float)tileRect.y, tileRect.w, tileRect.h, 1);
 		transform = &entity->getComponent<TransformComponent>();
 
 		entity->addComponent<SpriteComponent>(path);
 		sprite = &entity->getComponent<SpriteComponent>();
-	}*/
+	}
 
 }; 
