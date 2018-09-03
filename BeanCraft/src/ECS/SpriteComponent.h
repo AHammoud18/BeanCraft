@@ -31,21 +31,21 @@ public:
 		setTex(path);
 	}
 
-	SpriteComponent(const char* path, bool isAnimated) //animation speed
+	SpriteComponent(const char* path, bool isAnimated) //this relates to Game.cpp, for example in line 56 of Game.cpp, the const char* path as shown here, is the file path written over there, and a bool set to true to have the function below run
 	{
-		animated = isAnimated;
+		animated = isAnimated; //if it is animated
 
-		Animation idle = Animation(0, 5, 100);
-		Animation walk = Animation(1, 4, 100);
+		Animation idle = Animation(0, 5, 100); // in Animation(0, 5, 100) the 0 references the Y value of the sprite sheet, this being the very first sprite animation, 5 is the number of frames in that animation, and 100 is the delay between each frame in miliseconds
+		Animation walk = Animation(1, 4, 100); //the same applies to this and the rest below
 		Animation idlesword = Animation(2, 5, 100);
 		Animation walksword = Animation(3, 4, 100);
 
-		animations.emplace("Idle", idle);
-		animations.emplace("Walk", walk);
-		animations.emplace("IdleSword", idlesword);
-		animations.emplace("WalkSword", walksword);
+		animations.emplace("Idle", idle); //this makes it easier to address what our animation will be
+		animations.emplace("Walk", walk); //this makes it easier to address what our animation will be, look in KeyboardComponent.h to see this run when we press the "w" key
+		animations.emplace("IdleSword", idlesword); //these are not implemented in our keyboard input yet, but will be used later
+		animations.emplace("WalkSword", walksword); //these are not implemented in our keyboard input yet, but will be used later
 
-		Play("Idle");
+		Play("Idle"); //this is the first animation played when starting the game, you could change this to the others above
 		
 		setTex(path);
 	}

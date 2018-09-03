@@ -1,6 +1,6 @@
 #include "Map.h"
 #include "Game.h"
-#include <fstream>
+#include <fstream> //needed to load in files
 
 Map::Map()
 {
@@ -14,22 +14,24 @@ void Map::LoadMap(std::string path, int sizeX, int sizeY)
 {
 	char tile;
 	std::fstream mapFile;
-	mapFile.open(path);
+	mapFile.open(path); //this will attempt to load in a map from the file path given in Game.cpp
 
-	for (int y = 0; y < sizeY; y++)
+	for (int y = 0; y < sizeY; y++) //a for statement saying "if y is equal to zero on the coords of the map and its less than the Y size of that map, it'll continue to add 1 more y value until it reaches the map's max Y value (which is 20)
 	{
-		for (int x = 0; x < sizeX; x++)
+		for (int x = 0; x < sizeX; x++) //same as explained above,  but for the x axis of that map
 		{
-			mapFile.get(tile);
-			Game::AddTile(atoi(&tile), x * 32, y * 32);
+			mapFile.get(tile); //it'll now grab each number in the map file and relate them to a tile which is then put into TileComponent to address the textures correctly
+			Game::AddTile(atoi(&tile), x * 32, y * 32); //this size of each tile
 			mapFile.ignore();
 		}
 	}
 
 
-	mapFile.close();
+	mapFile.close(); //makes sure to close the file when done reading
 }
 
+
+//below is me creating example maps, one with double integers (which doesn't work with our current code), and the other since integer which does work
 
 /*
 00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00

@@ -17,7 +17,7 @@ public:
 
 	TileComponent() = default;
 
-	TileComponent(int x, int y, int w, int h, int id)
+	TileComponent(int x, int y, int w, int h, int id) //this loads in our tiles from assets
 	{
 		position.x = x;
 		position.y = y;
@@ -25,11 +25,11 @@ public:
 		tileRect.y = y;
 		tileRect.w = w;
 		tileRect.h = h;
-		tileID = id;
+		tileID = id; //each texture's id number
 
-		switch (tileID)
+		switch (tileID) //a switch statement is used to determine which textures apply to which integer displayed in "map.map"
 		{
-		case 0:
+		case 0: //the sky texture will relate to the 0 integer in the map file, the same applies to the rest below
 			path = "assets/sky.png";
 			break;
 		case 1:
