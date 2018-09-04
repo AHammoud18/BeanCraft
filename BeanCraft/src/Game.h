@@ -4,6 +4,7 @@
 #include "SDL_image.h"
 #include <iostream>
 #include <vector>
+#include "audio.h"
 
 class ColliderComponent;
 
@@ -30,4 +31,6 @@ private:
 	bool isRunning;
 	int cnt = 0; //this is no longer used, but was used in Game.cpp's update function to display numbers just to prove that the game is running
 	SDL_Window *window;
+	Audio music;
+	Audio effect;
 };

@@ -31,6 +31,7 @@ public:
 			case SDLK_a:
 				transform->velocity.x = -1; //this allows the player to move left
 				sprite->Play("Walk"); //this loads in the walking sprite animation from SpriteComponent.h to play when the a key is pressed
+				sprite->spriteFlip = SDL_FLIP_NONE;
 				break;
 			case SDLK_d:
 				transform->velocity.x = 1; //this allows the player to move right
@@ -59,11 +60,12 @@ public:
 			case SDLK_a:
 				transform->velocity.x = 0;
 				sprite->Play("Idle");
+				sprite->spriteFlip = SDL_FLIP_NONE;
 				break;
 			case SDLK_d:
 				transform->velocity.x = 0;
 				sprite->Play("Idle");
-				sprite->spriteFlip = SDL_FLIP_NONE; //this flips the characters sprite back, although im trying to fix this, so he can idle the way he was facing previously
+				sprite->spriteFlip = SDL_FLIP_HORIZONTAL; //this flips the characters sprite back, although im trying to fix this, so he can idle the way he was facing previously
 				break;
 			case SDLK_SPACE:
 				transform->velocity.y = 0;

@@ -12,7 +12,7 @@ int main(int argc, char *argv[])
 	int frameTime;
 
 	game = new Game();
-	game->init("BeanCraft", 800, 640, false);
+	game->init("BeanCraft", 1280, 720, false);
 
 	while (game->running())
 	{

@@ -24,7 +24,8 @@ public:
 
 	TransformComponent(int sc)
 	{
-		position.Zero();
+		position.x = 440;
+		position.y = 450;
 		scale = sc;
 	}
 

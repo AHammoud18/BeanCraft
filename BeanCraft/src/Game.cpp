@@ -45,18 +45,21 @@ void Game::init(const char* title, int width, int height, bool fullscreen) //thi
 		{
 			SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255); //Color of the windows, right now it's set to white
 		}
-
+		
 		isRunning = true; //when the game is running, the bool "isRunning" that was in Game.h is set to true over here
 	}
+	music.load("sound/menu_music.wav");
+	music.play();
 	map = new Map();
 
-	Map::LoadMap("assets/map1.map", 25, 20); //this loads in a .map file from the assets folder to draw into the game
+	Map::LoadMap("assets/map1.map", 40, 23); //this loads in a .map file from the assets folder to draw into the game
 
 	player.addComponent<TransformComponent>(2);								
 	player.addComponent<SpriteComponent>("assets/orangeanims.png", true); //this loads in the sprite sheet, the "true" statement come from Animation.h, this lets the SpriteComponent know that its supposed to be animated
 	player.addComponent<KeyboardController>(); //this implements keyboard inputs to the player
 	player.addComponent<ColliderComponent>("player"); //this is a collider component called player
 	player.addGroup(groupPlayers); //this puts the player in the "groupPlayers" section from line 18 in Game.cpp
+
 }
 
 void Game::handleEvents()  //this function runs when the console is quit
